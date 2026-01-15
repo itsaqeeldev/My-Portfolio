@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ParticleField } from './ParticleField';
 import { ChevronDown, Code, Terminal, Cpu } from 'lucide-react';
 
+
 const Hero = () => {
     const [roleIndex, setRoleIndex] = useState(0);
     const roles = ["Developer", "Builder", "Innovator"];
@@ -100,8 +101,8 @@ const Hero = () => {
                                 <span className="relative z-10 font-bold group-hover:translate-x-1 transition-transform inline-block">VIEW WORK</span>
                                 <div className="absolute inset-0 bg-neon-cyan/20 blur-xl group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
                             </a>
-                            <a href="#contact" className="px-8 py-3 border border-white/10 text-white hover:border-electric-violet hover:text-electric-violet transition-colors duration-300">
-                                CONTACT_ME
+                            <a href={`${import.meta.env.BASE_URL}Aqeel_Abbas_Resume.pdf?v=1`} download="Aqeel_Abbas_Resume.pdf" className="px-8 py-3 border border-white/10 text-white hover:border-electric-violet hover:text-electric-violet transition-colors duration-300">
+                                DOWNLOAD_CV
                             </a>
                         </motion.div>
                     </div>
