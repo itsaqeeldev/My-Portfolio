@@ -95,7 +95,7 @@ const Journey = () => {
                 {/* Timeline */}
                 <div className="relative mb-24">
                     {/* Center Line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-transparent via-neon-cyan/50 to-transparent blur-[1px]" />
+                    <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-transparent via-neon-cyan/50 to-transparent blur-[1px]" />
 
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (
@@ -105,11 +105,11 @@ const Journey = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                                className={`flex items-center justify-between ${exp.side === 'left' ? 'flex-row' : 'flex-row-reverse'
-                                    } w-full`}
+                                className={`flex items-center justify-between w-full flex-row ${exp.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'
+                                    }`}
                             >
                                 {/* Content Card */}
-                                <div className="w-5/12 group">
+                                <div className="w-full md:w-5/12 ml-16 md:ml-0 order-2 md:order-none group">
                                     <div className="relative p-6 bg-deep-navy/40 backdrop-blur-xl border border-white/5 rounded-xl overflow-hidden hover:border-white/10 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,209,255,0.1)] group-hover:-translate-y-1">
                                         <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/5 to-electric-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -130,13 +130,13 @@ const Journey = () => {
                                 </div>
 
                                 {/* Center Node */}
-                                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-deep-void border border-white/10 rounded-full shadow-[0_0_15px_rgba(0,209,255,0.3)]">
+                                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-deep-void border border-white/10 rounded-full shadow-[0_0_15px_rgba(0,209,255,0.3)] shrink-0 order-1 md:order-none left-0 md:left-auto">
                                     <div className="absolute inset-0 bg-neon-cyan/20 rounded-full animate-ping opacity-20" />
                                     {exp.icon}
                                 </div>
 
                                 {/* Spacer for opposite side */}
-                                <div className="w-5/12" />
+                                <div className="hidden md:block w-5/12" />
                             </motion.div>
                         ))}
                     </div>
